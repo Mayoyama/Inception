@@ -107,13 +107,13 @@ volumes:
     driver_opts:
       type: none
       o: bind
-      device: /home/speterse/data/mysql
+      device: /home/shanep/data/mysql
   wordpress: 
     driver: local
     driver_opts:
       type: none
       o: bind
-      device: /home/speterse/data/wordpress
+      device: /home/shanep/data/wordpress
       
 networks:
   inception:
