@@ -38,14 +38,51 @@ services:
   nginx:
     build: ./requirements/nginx
     image: nginx:v1
-    environment:
-      - name=value
-    secrets:
-      - db_password
     volumes:
-      - ?
+      - wordpress:/var/www/html
     networks:
       - inception
+    ports:
+      - "443:443"
+    restart: on-failure
+
+  portainer:
+    build: ./requirements/bonus/portainer
+    image: portainer:v1
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      - inception
+    ports:
+      - "9443:9443"
+    restart: on-failure
+
+  adminer:
+    build: ./requirements/bonus/adminer
+    image: adminer:v1
+    networks:
+      - inception
+    ports:
+      - "8080:8080"
+    restart: on-failure
+
+  redis:
+    build: ./requirements/bonus/redis
+    image: redis:v1
+    networks:
+      - inception
+    restart: on-failure
+
+  ftp:
+    build: ./requirements/bonus/ftp
+    image: ftp:v1
+    volumes:
+      - wordpress:/var/www/html
+    networks:
+      - inception
+    ports:
+      - "21:21"
+      - "21100-21110:21100-21110"
     restart: on-failure
 
 secrets:
