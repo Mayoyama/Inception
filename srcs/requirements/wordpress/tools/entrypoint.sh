@@ -13,7 +13,7 @@ if [ ! -f "/var/www/html/wp-config.php" ]; then
 	wp core download --path=/var/www/html --allow-root
 	wp config create --dbname="${MYSQL_DATABASE}" --dbuser="${MYSQL_USER}" --dbpass="${DB_PASSWORD}" --dbhost=mariadb --path="/var/www/html" --allow-root
 	wp core install --path=/var/www/html \
-		--url="https://${DOMAIN_NAME}:${WP_PORT}" \
+		--url="https://${DOMAIN_NAME}" \
 		--title="${WP_ADMIN_USER}'s wordPress" \
 		--admin_user="${WP_ADMIN_USER}" \
 		--admin_password="${WP_ADMIN_PASSWORD}" \
