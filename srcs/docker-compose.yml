@@ -108,7 +108,7 @@ secrets:
   wp_user_password:
     file: ../secrets/wp_user_password.txt
   ftp_user_password:
-    file: ../secrets/ftp_user_secrets.txt
+    file: ../secrets/ftp_user_password.txt
 
 volumes:
   mysql:
