@@ -19,6 +19,9 @@ if [ ! -f "/var/www/html/wp-config.php" ]; then
 		--admin_password="${WP_ADMIN_PASSWORD}" \
 		--admin_email="${WP_ADMIN_ADDRESS}" \
 		--allow-root
+	wp config set WP_REDIS_HOST redis --path=/var/www/html --allow-root
+	wp plugin install redis-cache --activate --path=/var/www/html --allow-root
+	wp redis enable --path=/var/www/html --allow-root
 	wp user create "${WP_USER}" "${WP_USER_ADDRESS}" --role=author --user_pass="${WP_USER_PASSWORD}" --path=/var/www/html --allow-root
 
 fi

@@ -12,8 +12,8 @@ build:
 	docker compose --project-directory srcs -f srcs/docker-compose.yml build
 
 clean: compose-down
-	rm -rf $(MARIADB_MOUNT_DIR)/*
-	rm -rf $(WP_MOUNT_DIR)/*
+	sudo rm -rf $(MARIADB_MOUNT_DIR)/*
+	sudo rm -rf $(WP_MOUNT_DIR)/*
 
 
 .PHONY: compose-up compose-down build clean
