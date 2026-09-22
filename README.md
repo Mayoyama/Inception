@@ -53,7 +53,7 @@ See `USER_DOC.md` for day-to-day usage (starting/stopping, accessing the site, a
 
 ## Resources
 
-**Docker files**
+**Dockerfiles**
 - https://docs.docker.com/get-started/docker-concepts/building-images/writing-a-dockerfile/
 - https://docs.docker.com/build/building/best-practices/
 
