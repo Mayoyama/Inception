@@ -7,7 +7,7 @@ Prerequisites: a Linux VM with Docker and the Docker Compose plugin installed.
 Two sets of configuration are required before the first build, neither of which is committed to git:
 
 - `srcs/.env` — non-secret configuration: `DOMAIN_NAME`, `MYSQL_DATABASE`, `MYSQL_USER`, `WP_ADMIN_USER`, `WP_ADMIN_ADDRESS`, `WP_USER`, `WP_USER_ADDRESS`, `FTP_USER`.
-- `secrets/` (repository root) — one plain-text file per secret, referenced by `srcs/docker-compose.yml`: `db_password.txt`, `db_root_password.txt`, `wp_admin_password.txt`, `wp_user_password.txt`, `ftp_user_secrets.txt`. Containers read these at runtime from `/run/secrets/<name>`.
+- `secrets/` (repository root) — one plain-text file per secret, referenced by `srcs/docker-compose.yml`: `db_password.txt`, `db_root_password.txt`, `wp_admin_password.txt`, `wp_user_password.txt`, `ftp_user_password.txt`. Containers read these at runtime from `/run/secrets/<name>`.
 
 Both are excluded via `.gitignore` and must be created manually on whichever machine runs the project.
 
